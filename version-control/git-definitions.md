@@ -15,3 +15,5 @@ A commit is basically hitting save on your code. Every commit should be accompan
 Did we learn this? I don't think we learned this. But I have consulted the internet, and the answer is as follows: If two people changed the same lines of the same file, (for example, if one person decided to delete the line while the other person decided to modify it) Git simply cannot know what is correct. Git will then mark the file as having a conflict - which you'll have to resolve before you can continue your work.
 
 I am making one final update just to see if I can track it with a commmit!
+
+Trying this one more time.
