@@ -18,4 +18,4 @@ A commit is a saving of a branch with a message attached that succinctly describ
 
 A merge conflict occurs when Git doesn't know what to do with changes to a file. An example of this is when two people change the same lines of code, but one modifies them and the other deletes them.
 
-EDIT:
+EDIT: Small edit :)
