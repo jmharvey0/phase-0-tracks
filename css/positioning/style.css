@@ -1,0 +1,19 @@
+img.glasses {
+	position: absolute;
+	top: 34%;
+	left: 5%;
+    z-index: 0;
+}
+
+img.hat {
+	position: absolute;
+    top: -1px;
+    z-index: -1;
+}
+
+img.octopus {
+	position: relative;
+    left: 8px;
+    top: 90px;
+    z-index: -2;
+}
