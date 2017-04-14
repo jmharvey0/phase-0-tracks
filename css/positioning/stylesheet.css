@@ -1,0 +1,17 @@
+body{
+	display: block;
+}
+#octopus{
+	margin:0 auto;
+	margin-top:4em;
+	margin-left:10em;
+}
+#hat{	
+	margin-left:8.5em;
+	position:absolute;
+}
+#glasses{
+	position: absolute;
+	top:10.8em;
+	left:13.1em;
+}
