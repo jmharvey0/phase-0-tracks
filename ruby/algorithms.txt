@@ -1,0 +1,35 @@
+Algorithm - Using an elevator
+
+- Decide whether you are going up or down
+	- If going up, push the up button.
+	- If going down, push the down button.
+- Wait for the elevator to arrive
+- Wait for the elevator doors to open
+- Step inside the elevator
+- Turn around
+- Locate the button dashboard
+- Search for the number of the floor you want to go to
+- Push the button displaying the number of the floor you want to go to
+- Wait for doors to close
+	- If doors don’t close automatically, press the door close button
+- Wait for elevator to move
+- Wait for doors to open
+- Check floor
+	- If current floor == floor you want to go to, step out of the elevator
+
+Common task: Smushing a banana in your backpack!
+- Find banana
+- Open backpack
+	- Put banana inside backpack
+	- Put another item in backpack 
+	- Continue putting items in backpack until backpack is full
+- Close backpack
+- Pick up backpack
+- Put backpack on your back
+- Carry backpack around
+- Open backpack
+	- Remove items in backpack
+	- Find smushed banana
+	- Remove smushed banana
+- Clean inside of backpack with paper towel
+- Repeat
