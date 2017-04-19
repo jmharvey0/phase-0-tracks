@@ -1,0 +1,30 @@
+body {
+  font-family: arial;
+}
+
+header {
+  background-color: blue;
+}
+
+h2 {
+  font-style: italic;
+}
+
+.column-1 {
+  background-color:orange;
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
+.column-2 {
+  background-color: yellow;
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
+footer {
+  background-image: url("http://images1.villagevoice.com/imager/u/745xauto/7874686/joes-pizza-slice-ig.jpg");
+  height: 300px;
+}
