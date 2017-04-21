@@ -1,0 +1,33 @@
+-Press button to open elevator
+-Once elevator opens
+	-Then walk in
+-While inside the elevator
+	-Until you step out of the elevator:
+		-Ask Josh what floor to go to
+		-Search through buttons for the floor number from Josh
+			-Then press button
+		-While elevator is moving
+			-Until the elevator doors open
+				-Sing along to the music
+		-Check with Josh that this is the correct floor
+			-If yes
+				-Step out of elevator
+
+**How to Start your day off right**
+
+-Wake up
+-Get out of bed
+-Clean your body
+-Check your schedule
+	-If important morning meeting
+		-Dress professionally
+	-else
+		-Dress comfy
+-Make your bed and clean your room
+-Head downstairs
+-Make breakfast
+-While eating
+	-Browse your phone/tablet
+		-Check social media/e-mails
+-Clean up the kitchen from breakfast
+-Continue on with your day.
