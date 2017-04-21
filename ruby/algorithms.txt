@@ -1,0 +1,14 @@
+-Press button to open elevator
+-Once elevator opens
+	-Then walk in
+-While inside the elevator
+	-Until you step out of the elevator:
+		-Ask Josh what floor to go to
+		-Search through buttons for the floor number from Josh
+			-Then press button
+		-While elevator is moving
+			-Until the elevator doors open
+				-Sing along to the music
+		-Check with Josh that this is the correct floor
+			-If yes
+				-Step out of elevator
