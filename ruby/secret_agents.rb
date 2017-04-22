@@ -7,6 +7,7 @@
 def encrypt(pass)
 	index = 0
 	while index < pass.length
+		# .ord gives you the ASCII Char code, and 122 is the char code for "z"
 		if pass[index].ord == 122 #This is for in case of End case problem ("z".next = "aa")
 			pass[index] = "a"
 		else
@@ -14,7 +15,8 @@ def encrypt(pass)
 		end
 		index += 1
 	end
-	puts pass
+	puts pass #for testing
+	return pass #Increases the scope of the Pass var for the decrypt(encrypt("swordfish")) case
 end
 
 #DECRYPT
@@ -34,4 +36,6 @@ def decrypt(pass)
 		pass[index] = alphabet[decryptNum]
 		index += 1
 	end
+	puts pass #for testing
+	return pass
 end
