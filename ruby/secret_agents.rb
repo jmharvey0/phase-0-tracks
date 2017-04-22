@@ -18,7 +18,7 @@ def encrypt(pass)
 		end
 		index += 1
 	end
-	puts pass #for testing
+	#puts pass #for testing
 	return pass #Increases the scope of the Pass var for the decrypt(encrypt("swordfish")) case
 end
 
@@ -38,7 +38,7 @@ def decrypt(pass)
 		pass[index] = alphabet[decryptNum]
 		index += 1
 	end
-	puts pass #for testing
+	#puts pass #for testing
 	return pass
 end
 
@@ -49,10 +49,18 @@ end
 #Print out the result
 
 puts "Welcome Agent\nWould you like to Encrypt or Decrypt a Password today?\nType 1 for Encryption\nType 2 for Decrypt"
-agentChoice = gets.chomp
+agentChoice = gets.to_i
 	while agentChoice > 2 or agentChoice < 1
 		puts "Please enter 1 for Encrypt or 2 for Decrypt"
-		agentChoice = gets.chomp
+		agentChoice = gets.to_i
 	end
 puts "Password:"
-pass = gets.chomp
+pass = gets
+
+if agentChoice == 1
+	pass = encrypt(pass)
+else
+	pass = decrypt(pass)
+end
+
+puts "Your password has been altered: #{pass}"
