@@ -7,15 +7,31 @@
 def encrypt(pass)
 	index = 0
 	while index < pass.length
-		#if pass[index] != "z" or "Z" This is for in case of End case problem ("z".next = "aa")
+		if pass[index] != "z" or "Z" #This is for in case of End case problem ("z".next = "aa")
 			pass[index] = pass[index].next
-			index += 1
+		else
+			pass[index] = "a"
+		end
+		index += 1
 	end
 	puts pass
 end
+
 #DECRYPT
 #input -> "bcd"
 #Return string is 1 character less than the input For each character
 # *Exception, Spaces remain unchanged*
 #output -> "abc"
 
+def decrypt(pass)
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	index = 0
+	while index < pass.length
+		#Gets the index number of the letter we want
+		decryptNum = alphabet.index(pass[index]) - 1
+
+		#Decrypts the password
+		pass[index] = alphabet[decryptNum]
+		index += 1
+	end
+end
