@@ -7,10 +7,10 @@
 def encrypt(pass)
 	index = 0
 	while index < pass.length
-		if pass[index] != "z" or "Z" #This is for in case of End case problem ("z".next = "aa")
-			pass[index] = pass[index].next
-		else
+		if pass[index].ord == 122 #This is for in case of End case problem ("z".next = "aa")
 			pass[index] = "a"
+		else
+			pass[index] = pass[index].next
 		end
 		index += 1
 	end
