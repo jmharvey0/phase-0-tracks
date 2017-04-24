@@ -31,3 +31,16 @@ puts "The hamster's volume level is #{volume}."
 puts "The hamster's fur is #{fur_color}."
 puts "The hamster is about #{age} years old."
 puts "Viable adoption candidate? #{adoption_candidate}."
+
+puts "The name of the hamster is #{name}." 
+puts "The volume is #{volume}."
+puts "The fur color is #{color}."
+puts "Viable adoption candidate? #{adoption_candidate}."
+if age.empty?
+	age = nil
+		puts "The hamster's age is unknown"
+#If customer gives a decimal, convert it to a float
+else
+	age.to_i
+		puts "The hamster is #{age} years old"
+end
