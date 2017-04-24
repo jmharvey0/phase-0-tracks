@@ -17,7 +17,7 @@ if birth_year + c_age == 2016 || birth_year + c_age == 2017
 	puts "age is true"
 else
 	age = false
-	puts "age is false"
+	#puts "age is false"
 end 
 
 puts "Our company cafeteria serves garlic bread. Do you want us to order you some? (y/n)"
@@ -36,6 +36,17 @@ else
 	insurance = false
 end 
 
+#RELEASE 4 ATTEMPT
+#	puts "List your allergies (say 'done' when you're finished)."
+#	allergy = [gets] 
+#	array << allergy 
+#	case 
+#		when allergy.include?; "sunshine"
+#			puts "Probably a vampire."
+#		when allergy.include?; "done"
+#			puts "Thanks for the information!"	
+#	end 
+
 case 
 when c_name == "Drake Cula" || c_name == "drake cula" || c_name == "Tu Fang" || c_name == "tu fang"
 	puts "Definitely a vampire!!!!!!!!!"
@@ -50,4 +61,5 @@ else
 end 
 
 e_to_process = e_to_process - 1
-end
+end 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
