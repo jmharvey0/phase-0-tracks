@@ -8,14 +8,17 @@ def detection(vampName, age, birthYear, garlicBread, insurance)
 			vampireDetection = "Proabably a vampire"
 	elsif age.to_i != (2017 - birthYear.to_i) && !garlicBread && !insurance
 			vampireDetection = "Almost certainly a vampire"
-	elsif vampName == "Drake Cula" || "Tu Fang"
-		vampireDetection = "Definitely a vampire"
 	else
 		vampireDetection = "Inconclusive"
 	end
+
+	if vampName == "Drake Cula" || "Tu Fang"
+		vampireDetection = "Definitely a vampire"
+	else
+		break
+	end
 	return vampireDetection
 end
-
 
 puts "How many Employees will be processed in today's survey?"
 vampNum = gets.chomp.to_i
