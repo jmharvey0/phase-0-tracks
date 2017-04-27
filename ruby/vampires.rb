@@ -41,6 +41,17 @@ for i in 1..vampNum
 	insurance = gets.chomp.to_s
 
 	vampireDetection = detection(vampName, age, birthYear, garlicBread, insurance)
+	
+	begin
+		puts "Any allergies?\nPlease enter in 1 at a time\nEnter done when finished"
+		vampAllergy = gets.chomp
+	end while vampAllergy != "sunshine" || "done"
 
+	if vampAllergy == "sunshine"
+		vampireDetection = "Proabably a vampire"
+	end
+	
 	puts "Results: #{vampireDetection}" 
+
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
