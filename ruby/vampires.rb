@@ -42,10 +42,4 @@ for i in 1..vampNum
 	vampireDetection = detection(vampName, age, birthYear, garlicBread, insurance)
 
 	puts "Results: #{vampireDetection}" 
-end	
-elsif  && ()
-	
-elsif  && !(garlicBread || insurance)
-	
-elsif age.to_i != (2017 - birthYear.to_i) && !garlicBread && !insurance
-	
+end
