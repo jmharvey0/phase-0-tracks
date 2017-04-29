@@ -65,7 +65,7 @@ p b
 #Delete if for hash
 b_hash = {"a" => 100, "b" => 200, "c" => 300 }
 
-b_hash.delete_if { |key, value| key >= 200 }
+b_hash.delete_if { |key, value| value == 200 }
 p b_hash
 
 
@@ -76,7 +76,9 @@ c = [1,2,3,4,5,6,7,8]
 c.keep_if { |item| item < 5 }
 p c 
 
-#INSERT keep if for hash
+#Keep if for hash
+b_hash.keep_if { |key, value| value == 100 }
+p b_hash
 
 # A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
 
@@ -87,14 +89,19 @@ d.select! { |item| item.even? }
 p d 
 
 #INSERT select for hash
+d_hash = {"aa" => 10, "bb" => 20, "cc" => 30, "dd" => 40 }
+d_hash.select! {|k,v| k > "aa"}
+p d_hash 
 
-# A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+#remove items from a data structure until condition is FALSE, then stops
+#for ARRAY
+example = [13, 29, 31, 49, 5, 96, 7, 8, 9, 10]
+example.sort! 
+p example.drop_while {|item| item < 30 }
 
-#INSERT for ARRAY
-e = [13,2,31,4,5,6,7,8,9,10]
-e.include? { |item| item < 9 }
-
-#INSERT for HASH
+#for HASH - reject
+d_hash = {"aa" => 10, "bb" => 20, "cc" => 30, "dd" => 40 }
+p d_hash.reject {|k,v| v > 10}
 
 
 
