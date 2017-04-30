@@ -41,3 +41,37 @@ end
 p fib_arr(5)
 
 p fib_arr(100) 
+
+#RELEASE 2
+# Bubble sort
+
+#take an array
+arr_to_bub = [9, 300, 2, 4, 19, 80]
+
+def bubble_sort(arr_to_bub)
+n = arr_to_bub.length 
+loop do 
+	swapped = false 
+
+	(n-1).times do |i|
+		# compare each value with the one following it
+		if arr_to_bub[i] > arr_to_bub[i+1]
+			# if value following is lower swap the values
+			arr_to_bub[i], arr_to_bub[i+1] = arr_to_bub[i+1], arr_to_bub[i]
+			#^do we need to store this value or make it permanent somehow?
+			#i would have expected a ! or a return
+		swapped = true
+		# continue loop until array is in correct order (no swaps are made)
+		end
+	end
+	# when no swaps are made, break
+	break if not swapped
+	end	
+arr_to_bub
+end
+
+p bubble_sort(arr_to_bub)
+
+
+
+
