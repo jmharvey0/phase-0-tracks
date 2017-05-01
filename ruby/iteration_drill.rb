@@ -104,24 +104,44 @@ extinct_animals = {
 # def writing_out {|animal, year_ext| puts "#{animal} - #{year_ext} * "}
 # p writing_out
 
-def writing_out(extinct_animals)
-extinct_animals.each do |animal, year_ext|
-	puts "#{animal} - #{year_ext} * "
-	end
-end
+# def writing_out(extinct_animals)
+# extinct_animals.each do |animal, year_ext|
+# 	puts "#{animal} - #{year_ext} * "
+# 	end
+# end
 
-print writing_out(extinct_animals)
+# print writing_out(extinct_animals)
 
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
 # ----
 
+# def pre_mil(extinct_animals)
+# extinct_animals.each do |animal, year_ext|
+# 	if year_ext < 2000
+# 		puts "#{animal} - #{year_ext}"
+# 	end 
+# end
+# nil
+# end 
+
+# p pre_mil(extinct_animals)
+
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 # ----
+
+# def accurate_dates(extinct_animals)
+# extinct_animals.each do |animal, year_ext|
+# 	correct_year = year_ext + 3
+# 	puts "#{animal} - #{correct_year}"
+# 	end
+# end
+
+# p accurate_dates(extinct_animals)
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -131,8 +151,30 @@ print writing_out(extinct_animals)
 # Do not use any special built-in methods.
 # ----
 
+# def extinct_check(extinct_animals)
+# extinct_animals.each do |animal, year_ext|
+# 	if animal == "Andean Cat"
+# 		puts "Andrean Cat is on the extinct list"
+# 	elsif animal == "Dodo"
+# 		puts "Dodo is on the extinct list"
+# 	elsif animal == "Saiga Antelope"
+# 		puts "Saiga Antelope is on the extinct list"
+# 	else
+# 		# puts "None of these animals are on the extinct list"
+# 	end
+# end 
+# end 
+
+# p extinct_check(extinct_animals)
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
+
+# #ASK FOR HELP - not sure how to delete and then print deleted; couldn't find anything in docs
+# p extinct_animals.delete("Passenger Pigeon")
+
+
+
 # ----
