@@ -9,7 +9,7 @@ def crazy_alias(real_name)
 	f_l_reverse = [ divided_name[1], divided_name[0] ]
 	#p f_l_reverse
 #divide into component letters
-	f_l_reverse_str = f_l_reverse[0].downcase + f_l_reverse[1].downcase
+	f_l_reverse_str = f_l_reverse[0].downcase + " " + f_l_reverse[1].downcase
 	#separate values and store them in an array
 	f_l_reverse_arr = f_l_reverse_str.chars 
 	p f_l_reverse_arr
@@ -31,15 +31,6 @@ def crazy_alias(real_name)
 		# #use .join to make array back into one word string
 		# #what to do for consonants
 	p f_l_reverse_arr.join
-
-
-	#CHANGING ALL VOWELS TO NEXT VOWEL
-	#CHANGING EVERYTHING ELSE TO NEXT CONSONANT
-# real_name << name_arr
-# p name_arr
-
-# f_l_reverse = real_name[1] + real_name[0]
-# p f_l_reverse
 end
 
 crazy_alias(real_name)
