@@ -1,29 +1,21 @@
 real_name = ""
 
 def crazy_alias(real_name)
-	puts "Enter a first and last name, and we'll return your crazy agent alias!"
+	until real_name == "quit"
+		puts "Enter a first and last name, and we'll return your crazy agent alias! (If you're sick of this game, just say 'quit')"
 		real_name = gets.chomp
-
-	until real_name.empty? || real_name == "quit"
-		puts "Enter a first and last name, and we'll return your crazy agent alias!"
-		real_name = gets.chomp
-		# if real_name.empty?
-		# 	abort("Thanks for using the crazy agent name generator!")
-		# end
 		real_names_list = []
 		real_names_list >> real_name
 
 		#SWAPPING FIRST AND LAST
 		divided_name = real_name.split(' ')
-		#this returns ["Felicia", "Torres"]
-		# p divided_name
+		# swap name order
 		f_l_reverse = [ divided_name[1], divided_name[0] ]
-		#p f_l_reverse
-	#divide into component letters
+		#divide into component letters
 		f_l_reverse_str = f_l_reverse[0].downcase + " " + f_l_reverse[1].downcase
 		#separate values and store them in an array
 		f_l_reverse_arr = f_l_reverse_str.chars 
-	#loop through letters
+		#loop through letters & change as you go
 		f_l_reverse_arr.map! do |special_changes|
 			#define vowels vs consonants
 			vowels = ["a", "e", "i", "o", "u"]
@@ -38,8 +30,7 @@ def crazy_alias(real_name)
 				special_changes
 			end		
 		end
-			# #use .join to make array back into one word string
-			# #what to do for consonants
+		#use join to make array into words on a string
 		agent_alias = f_l_reverse_arr.join
 		puts "Your crazy agent alias is #{agent_alias}."
 	end
