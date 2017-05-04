@@ -1,3 +1,6 @@
+#ToDo 
+#finish methods puesdocode
+#finish methods ruby code
 
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
