@@ -52,6 +52,7 @@ def swap_names (str)
 	str.reverse!
 end
 
+
 #User Interface
 
 def user_interface
@@ -65,4 +66,3 @@ def user_interface
 	puts "You alias is #{name}"
 
 end
-
