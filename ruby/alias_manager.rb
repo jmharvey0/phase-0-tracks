@@ -52,3 +52,17 @@ def swap_names (str)
 	str.reverse!
 end
 
+#User Interface
+
+def user_interface
+	puts "Please enter the fisrt and last name you want an Alias for."
+	name = gets.chomp
+
+	name = swap_names(name)
+	name = next_vowel(name)
+	name = next_constonant(name)
+
+	puts "You alias is #{name}"
+
+end
+
