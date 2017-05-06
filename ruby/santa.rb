@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :location
+	attr_accessor :gender 
+
 	def initialize(gender, ethnicity)
 		# puts "Initializing Santa instance..."
 		@gender = gender
@@ -14,15 +17,7 @@ class Santa
 	end
 
 	def eat_milk_and_cookies(cookie_type)
-		puts "That was a good #{cookie_type}!"
-	end
-	#getter methods - make public data readable outside class
-	def age
-		@age
-	end
-
-	def location
-		@location
+		puts "That was a good #{cookie_type} cookie!"
 	end
 
 	def celebrate_birthday
@@ -37,9 +32,9 @@ class Santa
 		end
 	end 
 
-	def gender=(apple)
-		@gender = apple
-	end
+	# def gender=(apple)
+	# 	@gender = apple
+	# end
 end
 
 santa = Santa.new("female", "white")
