@@ -60,16 +60,12 @@ santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 example_ages = (0..140).to_a
-	2.times do |i|
+	200.times do |i|
 	rand_gender = example_genders.sample
 	rand_ethnicity = example_ethnicities.sample
 	rand_age = example_ages.sample
 	  santas << Santa.new(rand_gender, rand_ethnicity, rand_age)
 	end
 p santas
-
-
-
-
 
 
