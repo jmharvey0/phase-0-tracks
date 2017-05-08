@@ -50,3 +50,5 @@ puts "Welcome to the Word Game!"
 game = WordGame.new("hello")
 
 puts "A secret word has been chosen ;)"
+
+#typing
