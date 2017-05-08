@@ -12,17 +12,23 @@ class WordGame
 
 	def get_word
 		return @word
+		#output is "hello"
 	end 
 
-	# def word_breaker
-	# @word = @word.split(//) 
-	# end
+	def word_breaker
+		@word = @word[0].split(//) 
+		#output is ["h", "e", "l", "l", "o"]
+	end
+
+	def space_writer
+		space_maker = “_ “ * @word.length
+		space_writer = []
+		space_writer << space_maker
+		return space_writer
+	end
 end
 
 
-# def word_spaces
-# 	word.length * “_ “
-# end
 
 # def total_guesses
 # 	total_guesses = @word.length
