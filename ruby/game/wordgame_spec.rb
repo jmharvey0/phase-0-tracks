@@ -7,7 +7,13 @@ describe WordGame do
 		expect(word.get_word).to eq ["hello"]
 	end
 
-	# it "breaks the word into a string of letters" do
+	it "breaks the word into a string of letters" do
+		expect(word.word_breaker). to eq ["h", "e", "l", "l", "o"]
+	end
+
+	it "shows dashes for each letter" do
+		expect(word.space_writer). to eq ["_ _ _ _ _ "]
+	end
 
 end
 
