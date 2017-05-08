@@ -68,8 +68,3 @@ example_ages = (0..140).to_a
 	end
 p santas
 
-
-
-
-
-
