@@ -12,6 +12,22 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		p "That was a good #{cookie}"
 	end
+	def celebrate_birthday
+		@age += 1
+	end
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << reindeer_name
+	end
+	def set_gender(new_gender)
+		@gender = new_gender
+	end
+	def get_age
+		@age
+	end
+	def get_ethnicity
+		@ethnicity
+	end
 end
 
 #DRIVERCODE--------------------------------------------------------
