@@ -18,6 +18,7 @@ class Santa
 	def get_mad_at(reindeer_name)
 		@reindeer_ranking.delete(reindeer_name)
 		@reindeer_ranking << reindeer_name
+		p @reindeer_ranking
 	end
 	def set_gender(new_gender)
 		@gender = new_gender
@@ -31,14 +32,19 @@ class Santa
 end
 
 #DRIVERCODE--------------------------------------------------------
-# hohochicho = Santa.new
+hohochicho = Santa.new
 
 # hohochicho.speak
 # hohochicho.eat_milk_and_cookies("snickerdoodle")
 
-santas = []
-example_genders = ["male", "female", "agender"]
-example_ethnicities = ["black", "white", "latino", "asian", "penguin"]
-example_genders.length.times do |x|
-	santas << Santa.new(example_genders[x], example_ethnicities[x])
-end
+# santas = []
+# example_genders = ["male", "female", "agender"]
+# example_ethnicities = ["black", "white", "latino", "asian", "penguin"]
+# example_genders.length.times do |x|
+# 	santas << Santa.new(example_genders[x], example_ethnicities[x])
+# end
+
+hohochicho.celebrate_birthday
+hohochicho.get_age
+hohochicho.get_mad_at("Vixen")
+hohochicho.get_ethnicity
