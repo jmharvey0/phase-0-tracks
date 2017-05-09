@@ -67,4 +67,3 @@ example_ages = (0..140).to_a
 	  santas << Santa.new(rand_gender, rand_ethnicity, rand_age)
 	end
 p santas
-
