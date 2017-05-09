@@ -34,15 +34,15 @@ end
 #DRIVERCODE--------------------------------------------------------
 hohochicho = Santa.new
 
-# hohochicho.speak
-# hohochicho.eat_milk_and_cookies("snickerdoodle")
+hohochicho.speak
+hohochicho.eat_milk_and_cookies("snickerdoodle")
 
-# santas = []
-# example_genders = ["male", "female", "agender"]
-# example_ethnicities = ["black", "white", "latino", "asian", "penguin"]
-# example_genders.length.times do |x|
-# 	santas << Santa.new(example_genders[x], example_ethnicities[x])
-# end
+santas = []
+example_genders = ["male", "female", "agender"]
+example_ethnicities = ["black", "white", "latino", "asian", "penguin"]
+example_genders.length.times do |x|
+	santas << Santa.new(example_genders[x], example_ethnicities[x])
+end
 
 hohochicho.celebrate_birthday
 hohochicho.get_age
