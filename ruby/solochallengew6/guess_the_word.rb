@@ -1,7 +1,7 @@
 # Guess the word Game
 class Game
 	attr_reader :word
-	attr_writer :guesses
+	attr_reader :guesses
 # Method to set word
 # input: word to be guessed
 # steps:
@@ -10,10 +10,17 @@ class Game
 	def initialize(word)
 		@word = word
 		@num_guesses = word.length/2
+		@feedback = "_" * @word.length
 		p "Beginning guess the word..."
 	end
 	def get_word
 		@word
+	end
+	def get_guesses
+		@num_guesses
+	end
+	def get_feedback
+		@feedback
 	end
 
 # Method to check guess
@@ -22,16 +29,13 @@ class Game
 # create string same length as word to be guessed
 # check if character is in the word
 # place character into new string
-# output: new string showing blanks for unguessed letters
+# output:num of guesses left or new string for feedback
 	def guessing(guess)
-		feedback = "_" * @word.length
-		until @num_guesses < 1
-			if @word.include?(guess)
-				feedback.insert(@word.index(guess), guess)
-			else
-				@num_guesses -= 1
-			end
-			p "#{feedback}/nYou have #{@num_guesses} remaining"
+		if @word.include?(guess)
+			@feedback.slice!(@word.index(guess))
+			@feedback.insert(@word.index(guess), guess)
+		else
+			@num_guesses -= 1
 		end
 	end
 
