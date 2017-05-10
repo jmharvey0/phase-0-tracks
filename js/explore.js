@@ -1,10 +1,9 @@
 function reversal(word){
-	// var word = "HELLO";
-	var storage = []
+	var storage = new Array();
 	var chars_arr = word.split('');
-	// returns ["H", "E", "L", "L", "O"]
-	storage << console.log(chars_arr.reverse().join(""));
-	// returns ["O", "L", "L", "E", "H"]
+	var reversed = chars_arr.reverse().join("");
+	storage.push(reversed);
+	console.log(chars_arr.reverse().join(""));
 }
 
 reversal("banana")
