@@ -34,19 +34,42 @@ def add_to_list(list, item, quantity = 1)
 end
 
 # Method to remove an item from the list
-# input:
+# input: List and an item from it
 # steps:
-# output:
+	#find item
+	#remove the item
+# output:list
+
+def remove_from_list(list, item)
+	list.delete_if{|key, value| key == item}
+	return list
+end
 
 # Method to update the quantity of an item
-# input:
+# input:list, item and updated quantity
 # steps:
-# output:
+	#find the item
+	#update the value for the item
+# output:list
+
+def update_quantity(list, item, quantity)
+	add_to_list(list, item, quantity)
+
+	return list
+end
 
 # Method to print a list and make it look pretty
-# input:
+# input:list
 # steps:
-# output:
+# => key : value
+	#print the key + : + value
+# output: pretty list
+
+def print_list(list)
+	list.each do |item, quantity|
+		p "#{item} : #{quantity}" 
+	end
+end
 
 #DIVER CODE-------------------------------------------------------------------------------------------------
 
@@ -61,3 +84,11 @@ p list
 add_to_list(list, "squash", 5)
 
 p list
+
+remove_from_list(list, "squash")
+
+print_list(list)
+
+update_quantity(list, "carrots", 4)
+
+print_list(list)
