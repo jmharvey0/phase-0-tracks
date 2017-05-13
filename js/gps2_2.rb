@@ -86,3 +86,9 @@ def pretty_print(list)
 end 
 
 pretty_print(list_hash)
+
+new_list = {"lemonade" => 2, "tomatoes" => 3, "onions" =>1, "ice cream" => 4}
+
+remove_from_list(new_list, "lemonade")
+update_quantity(new_list, "ice cream", 1)
+pretty_print(new_list)
