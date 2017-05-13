@@ -65,7 +65,7 @@ class VirusPredictor
     puts " and will spread across the state in #{speed} months.\n\n"
 
   end
-  
+
 end
 
 #=======================================================================
@@ -93,3 +93,14 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# => The inner hash has symbols for their keys, and the outer hash has strings
+# What does require_relative do? How is it different from require?
+# => require_relative connects two different docs of code together and unlike require it bases its 'search' for the other doc based on the location of the calling doc.
+# What are some ways to iterate through a hash?
+# => while/until/for loops, #each method (#each also have specific verisions for key and value) 
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# => They were redundant. They were already accessible so we didn't need they as arguments in the methods.
+# What concept did you most solidify in this challenge?
+# => Danny & Josh: The accesiblity of instance varibles, and practicing DRY
