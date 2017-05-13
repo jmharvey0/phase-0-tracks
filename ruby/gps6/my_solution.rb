@@ -11,6 +11,7 @@ require_relative 'state_data'
 class VirusPredictor
 
 #initializes important variables
+ 
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -24,7 +25,7 @@ class VirusPredictor
   end
 
   private
-
+  
 #takes in population density, population and state. returns a tiered predicted deaths number, based on a multiple of population.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
@@ -89,3 +90,7 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+#=======================================================================
+# Reflection Section
+Contact GitHub API Training Shop Blog About
