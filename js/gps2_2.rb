@@ -6,23 +6,39 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: hash
 
-def create(groceries)
+def create(list_hash, groceries)
 	g_list_arr = groceries.split(" ")
-	quantity = [1, 1, 1, 1]
-	p [g_list_arr, quantity].transpose.to_h
+	p g_list_arr
+	# list_hash = {}
+	g_list_arr.each do |item|
+		list_hash[item] = 1
+	end
+	# list_hash
 end
 
+list_hash = {}
 groceries = "carrots apples cereal pizza"
-create(groceries)
+create(list_hash, groceries)
 
 # Method to add an item to a list
-# input: list, item name, and optional quantity
+# input: item name, and optional quantity
 # steps:
-	#locate list array
-	#push new item
-	#push new quantity (optional)
+	#locate list hash
+	#push new item as key
+	#if quantity exists, push new quantity as value
 	#print hash with updated values
 # output: hash with more, updated quantities
+
+def add_to_list(list, item, optional_quantity)
+	if optional_quantity
+		list[item] = optional_quantity
+	else
+		list[item] = 1
+	end
+	p list 
+end
+
+add_to_list(list_hash, "bananas", 3)
 
 # Method to remove an item from the list
 # input: item name
