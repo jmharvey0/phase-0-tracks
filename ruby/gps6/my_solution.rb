@@ -13,6 +13,7 @@ class VirusPredictor
   #attr_accessor :population_density, :state 
 
 #initializes important variables
+ 
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -26,7 +27,7 @@ class VirusPredictor
   end
 
   private
-
+  
 #takes in population density, population and state. returns a tiered predicted deaths number, based on a multiple of population.
   def predicted_deaths
     # predicted deaths is solely based on population density
@@ -96,8 +97,11 @@ state = {}
 # alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 # alaska.virus_effects
 
+# Reflection Section
+Contact GitHub API Training Shop Blog About
 #=======================================================================
 #the hash syntax with "string" => value stores a different string of data every time, so it's more memory intensive. the hash syntax with symbols (symbolkey: value) stores each symbol once, so it's more efficient.
 #require_relative looks within the existing the directory for the file name. require looks throughout the entire computer for the file name, which means you need to show the entire path to get to the file when calling it, rather than showing the file name only.
 #you can iterate through a hash with a do |key, value|
 # private - all methods that follow the word 'private' will be made private; i.e. they are not accessible for outside objects
+#=======================================================================

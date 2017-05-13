@@ -40,18 +40,18 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # For instance: are boots in your list of supplies?
 # ----
 
-#ASK FOR HELP HERE!
-# def search(item)
+# def search(zombie_apocalypse_supplies, item)
 # 	zombie_apocalypse_supplies.each do |i|
-# 		if zombie_apocalypse_supplies[i].include? item 
+# 		if i == item 
 # 		puts "Yes, #{item} is among the supplies!"
 # 		else
-# 		puts "No, #{item} is not on the supplies list."
+# 		#puts "No, #{item} is not on the supplies list."
 # 		end
 # 	end
 # end
 
-# search ("compass")
+# search(zombie_apocalypse_supplies, "compass")
+# search(zombie_apocalypse_supplies, "boots")
 
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
@@ -59,15 +59,14 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # leaving only 5. Do not use any special built-in methods.
 # ----
 
-#ASK FOR HELP HERE
 # def making_room(zombie_apocalypse_supplies)
-# 	zombie_apocalypse_fit = []
-# 	zombie_apocalypse_supplies = zombie_apocalypse_supplies - zombie_apocalypse_supplies[-1]
-# 	zombie_apocalypse_supplies << zombie_apocalypse_fit 
-# 	p zombie_apocalypse_fit
+# 	until zombie_apocalypse_supplies.length == 5
+# 		zombie_apocalypse_supplies.delete_at(0)
+# 	end
+# 	return zombie_apocalypse_supplies
 # end
 
-# p zombie_apocalypse_supplies
+# p making_room(zombie_apocalypse_supplies)
 
 
 # 5. You found another survivor! This means you can combine your supplies.
