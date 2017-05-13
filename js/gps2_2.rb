@@ -9,11 +9,9 @@
 def create(list_hash, groceries)
 	g_list_arr = groceries.split(" ")
 	p g_list_arr
-	# list_hash = {}
 	g_list_arr.each do |item|
 		list_hash[item] = 1
 	end
-	# list_hash
 end
 
 list_hash = {}
@@ -49,13 +47,42 @@ add_to_list(list_hash, "bananas", 3)
 	#print hash with updated values
 # output: hash with fewer items
 
+def remove_from_list(list, item)
+	list.each do |i, q|
+		if i == item
+			list = list.delete(item)
+		end
+	end
+end
+
+p remove_from_list(list_hash, "apples")
+
 # Method to update the quantity of an item
-# input: the name of the item, the new quantity
+# input: name of list, name of the item, the new quantity
 # steps: iterate through the keys within the has to find the item whose quantity needs to be modified
 # replace the corresponding value with the new quantity
 # output: hash with updated quantity at the identified key
+
+def update_quantity(list, item, new_quantity)
+	list.each do |i, q|
+		if i == item
+			list[item] = new_quantity
+			p list
+		end
+	end
+end
+
+update_quantity(list_hash, "cereal", 9)
 
 # Method to print a list and make it look pretty
 # input: list to be printed
 # steps: print the list
 # output: hash, printed with nice formatting
+
+def pretty_print(list)
+	list.each do |item, quantity|
+		puts "#{item} : #{quantity}"
+	end 
+end 
+
+pretty_print(list_hash)
