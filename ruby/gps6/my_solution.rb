@@ -4,7 +4,7 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# Require_relative connects the code to another document of code. Where location of the doc is represented as relative from where the oringial code is located.
 #
 require_relative 'state_data'
 
