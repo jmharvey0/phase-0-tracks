@@ -6,6 +6,15 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: hash
 
+def create(groceries)
+	g_list_arr = groceries.split(" ")
+	quantity = [1, 1, 1, 1]
+	p [g_list_arr, quantity].transpose.to_h
+end
+
+groceries = "carrots apples cereal pizza"
+create(groceries)
+
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
