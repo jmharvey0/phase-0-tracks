@@ -14,4 +14,8 @@ function reverse(str){
 }
 
 //DRIVER CODE--------------------------------------------------------------------
-console.log(reverse("hello"));
+if (1 == 1) {
+	console.log(reverse("hello"));
+} else {
+	console.log("oops");
+}
