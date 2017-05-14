@@ -14,6 +14,9 @@ function algos(array){
 	}
 	return array[longest_index];
 }
+function key_compare(object1, object2) {
+	
+}
 
 // DRIVER CODE----------------------------------------------------------------------
 var array = ["boom", "bam", "power", "powerful"]
