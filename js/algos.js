@@ -18,17 +18,28 @@ var characterArr = []
 //RELEASE 1
 //take two objects and check to see if the objects share at least 1 key/value pair
 
-yourFunction1({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-yourFunction2({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
+pair1={name: "Steven", age: 54}; 
+pair2={name: "Tamir", age: 54};
 
-function compare(pair1, pair2) {
-	var pair1SymbolArr = [];
-		pair1SymbolArr = Object.keys(pair1);
-	var pair2SymbolArr = [];
-		pair2SymbolArr = Object.keys(pair2);
-	var pair1ValueArr = [];
-	var pair2ValueArr = [];
+yourFunction2({animal: "Dog", legs: 4, tongue: 1}, {nose: 1, animal: "Dog", legs: 3});
 
+//take one pair and compare to everything else in next array
+yourFuction2([1])
+
+
+function compare(object1, object2) {
+	object1[0]
+	//iterate through all object 1 keys with for OR for_in OR object.keys
+	//first key is animal
+	//check to see if key called animal in object2
+
+	OR
+	//i know i have animal in object 1
+	//iterate through all keys in object 2 to see if there's a match
+
+	//i know the value for animal in object 1 is dog
+	//is the value for animal in object 2 dog
+	//if yes, true
 
 	//check key symbol
 	//if key symbol match, check key value
