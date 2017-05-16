@@ -4,7 +4,7 @@
 // search through Array for longest element
 // output: return the longest element
 
-function algos(array){
+function find_longest(array){
 	var longest_length = 0, longest_index;
 	for (var i = 0; i < array.length; i++) {
 		if (array[i].length > longest_length){
@@ -27,7 +27,7 @@ function key_compare(object1, object2) {
 // DRIVER CODE----------------------------------------------------------------------
 var array = ["boom", "bam", "power", "powerful"]
 
-console.log("In this data set the greatest power word is " + algos(array) + ".")
+console.log("In this data set the greatest power word is " + find_longest(array) + ".")
 
 console.log(key_compare({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 console.log(key_compare({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
