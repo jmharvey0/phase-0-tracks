@@ -1,0 +1,33 @@
+sqlite> SELECT * FROM cars;
+1|Jetta|33212|true|Black|1
+2|Camry|232|false|Red|3
+3|Fusion|122|false|Blue|2
+4|Fusion|122123|true|Black|2
+5|Acadia|125692|true|Blue|4
+6|Town & Country|32592|true|Rusty Gold|5
+
+sqlite> UPDATE cars SET color = "Red" WHERE milage = 122;
+
+sqlite> SELECT * FROM makes, cars WHERE cars.make_id = makes.id;
+1|Volkswagen|Germany|1|Jetta|33212|true|Black|1
+3|Toyota|Japan|2|Camry|232|false|Red|3
+2|Ford|USA|3|Fusion|122|false|Red|2
+2|Ford|USA|4|Fusion|122123|true|Black|2
+4|GMC|USA|5|Acadia|125692|true|Blue|4
+5|Chrysler|USA|6|Town & Country|32592|true|Rusty Gold|5
+
+sqlite> SELECT makes.name, makes.country, cars.model, cars.milage FROM cars JOIN makes ON cars.make_id = makes.id;
+Volkswagen|Germany|Jetta|33212
+Toyota|Japan|Camry|232
+Ford|USA|Fusion|122
+Ford|USA|Fusion|122123
+GMC|USA|Acadia|125692
+Chrysler|USA|Town & Country|32592
+
+sqlite> DELETE FROM cars WHERE model = "Fusion" AND used = "false";
+sqlite> SELECT makes.name, makes.country, cars.model, cars.milage FROM cars JOIN makes ON cars.make_id = makes.id;
+Volkswagen|Germany|Jetta|33212
+Toyota|Japan|Camry|232
+Ford|USA|Fusion|122123
+GMC|USA|Acadia|125692
+Chrysler|USA|Town & Country|32592
