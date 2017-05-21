@@ -9,8 +9,8 @@ create_chores_table = <<-SQL
 	id INTEGER PRIMARY KEY,
 	name VARCHAR(255),
 	complete_by_day VARCHAR(255),
-	person_id INT,
-	FOREIGN KEY
+	family_id INT,
+	FOREIGN KEY (family_id) REFERENCES family(id)
 	);
 SQL
 
