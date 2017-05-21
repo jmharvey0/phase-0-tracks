@@ -1,0 +1,13 @@
+ --- Release 2 ---
+ SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.users_id = users.id JOIN businesses ON reviews.business_id = businesses.id
+
+Output:
+Angela|Jolie|Amir's Towing|5|Awesome!
+Steven|Wonder|The Beagle Nightclub|1|Terrible!
+Bradford|Pitt|Grundy Hollow Wedding Chapel|2|Okay...
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.users_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.id=2;
+
+Output:
+Angela|Jolie|Amir's Towing|5|Awesome!
+
