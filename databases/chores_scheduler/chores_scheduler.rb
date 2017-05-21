@@ -46,12 +46,20 @@ def assign_chores(db, fam_name, chore)
 	db.execute("UPDATE chores SET family_id = ? WHERE name = ?", [name_index, chore])
 end
 #method to print chores list by day
-def print_daily_list
-	
+def print_daily_list(db, day)
+	puts "Chores for #{day}"
+	print_chores = db.execute("SELECT chores.name, family.name FROM chores, family WHERE chores.complete_by_day = ? AND chores.family_id = family.id", [day])
+	print_chores.each do |x|
+		puts "#{x[1]} : #{x[0]}"
+	end
 end
 #method to print chores list by person assigned
-def print_personal_list
-	
+def print_personal_list(db, name)
+	puts "Chores for #{name}"
+	print_chores = db.execute("SELECT chores.complete_by_day, chores.name FROM chores, family WHERE family.name = ? AND chores.family_id = family.id", [name])
+	print_chores.each do |x|
+		puts "#{x[0]} : #{x[1]}"
+	end
 end
 
 #DRIVER CODE--------------------------------------------------------------------------------------------------------------
@@ -63,3 +71,6 @@ end
 
 assign_chores(db, "Allie", "Empty Dishwasher")
 p db.execute("SELECT * FROM chores")
+
+print_daily_list(db, "Wednesday")
+print_personal_list(db, "Allie")
