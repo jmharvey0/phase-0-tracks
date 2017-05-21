@@ -3,6 +3,7 @@
 require 'sqlite3'
 #create SQL database
 db = SQLite3::Database.new("chores.db")
+db.results_as_hash = true
 #create tables for Chores and for family members
 create_chores_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS chores(
@@ -36,5 +37,13 @@ def update_chores
 end
 #method to update to family members
 def update_family
+	
+end
+#method to print chores list by day
+def print_daily_list
+	
+end
+#method to print chores list by person assigned
+def print_personal_list
 	
 end
