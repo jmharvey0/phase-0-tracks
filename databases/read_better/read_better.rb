@@ -35,8 +35,13 @@ db.execute("INSERT INTO reading_suggestions (title, author, type) VALUES
 def create_suggestion(db)
 	puts "Do you like fiction or non fiction?"
 	answer = gets.chomp.to_s
-	db.execute("SELECT title, author FROM reading_suggestions WHERE type=answer ORDER BY RANDOM() LIMIT 1")
+	#select a random row from the table where type=answer
+	suggestions = db.execute("SELECT title, author FROM reading_suggestions WHERE type='#{answer}' ORDER BY RANDOM() LIMIT 1")
+	#return suggestion in a string, filling in title and author
+	# suggestions = db.execute("SELECT * FROM reading_suggestions")
+	suggestions.each do |suggestion|
 	puts "You should read #{suggestion['title']} by #{suggestion['author']}!"
+	end 
 end
 
 create_suggestion(db)
