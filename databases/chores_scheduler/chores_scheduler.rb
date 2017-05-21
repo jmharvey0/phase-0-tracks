@@ -38,7 +38,6 @@ end
 def assign_chores(db, fam_name, chore)
 	family = db.execute("SELECT * FROM family")
 	name_index = 0
-	#broken here, todo fix loop
 	family.each do |fam|
 		if fam[1].eql? fam_name 
 			name_index = fam[0]
@@ -56,9 +55,9 @@ def print_personal_list
 end
 
 #DRIVER CODE--------------------------------------------------------------------------------------------------------------
-add_chores(db, "Empty Dishwasher", "Wednesday")
-add_family(db, "Josh", 21)
-add_family(db,"Allie", 19)
+# add_chores(db, "Empty Dishwasher", "Wednesday")
+# add_family(db, "Josh", 21)
+# add_family(db,"Allie", 19)
 # p db.execute("SELECT * FROM chores")
 # p db.execute("SELECT * FROM family")
 
