@@ -35,14 +35,14 @@ def add_family(db, name, age)
 	db.execute("INSERT INTO family (name, age) VALUES (?, ?)", [name, age])
 end
 #method to update to chores to assign chores to family members
-def assign_chores(db, fam_name)
+def assign_chores(db, fam_name, chore)
 	family = db.execute("SELECT * FROM family")
 	family.each do |fam|
-		if fam['name'] == fam_name
+		if fam["name"] == fam_name
 			name_index = fam
 		end
 	end
-	db.execute("UPDATE chores SET family_id = ? WHERE name = ?", [name_index, fam_name])
+	db.execute("UPDATE chores SET family_id = ? WHERE name = ?", [name_index, chore])
 end
 #method to print chores list by day
 def print_daily_list
@@ -54,9 +54,11 @@ def print_personal_list
 end
 
 #DRIVER CODE--------------------------------------------------------------------------------------------------------------
-add_chores(db, "Empty Dishwasher", "Wednesday")
+# add_chores(db, "Empty Dishwasher", "Wednesday")
 
-add_family(db,"Josh", 21)
-
+# add_family(db,"Josh", 21)
 p db.execute("SELECT * FROM chores")
 p db.execute("SELECT * FROM family")
+
+assign_chores(db, "Josh", "Empty Dishwasher")
+p db.execute("SELECT * FROM chores")
