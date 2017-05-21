@@ -27,20 +27,22 @@ SQL
 db.execute(create_chores_table)
 db.execute(create_family_table)
 #method to add to chores table
-def add_chores
-	
+def add_chores(db, name, complete_by_day)
+	db.execute("INSERT INTO chores (name, complete_by_day, family_id) VALUES (?, ?, 0)", [name, complete_by_day])
 end
 #method to add to family members
-def add_family
-	
+def add_family(db, name, age)
+	db.execute("INSERT INTO family (name, age) VALUES (?, ?)", [name, age])
 end
-#method to update to chores
-def update_chores
-	
-end
-#method to update to family members
-def update_family
-	
+#method to update to chores to assign chores to family members
+def assign_chores(db, fam_name)
+	family = db.execute("SELECT * FROM family")
+	family.each do |fam|
+		if fam['name'] == fam_name
+			name_index = fam
+		end
+	end
+	db.execute("UPDATE chores SET family_id = ? WHERE name = ?", [name_index, fam_name])
 end
 #method to print chores list by day
 def print_daily_list
@@ -50,3 +52,11 @@ end
 def print_personal_list
 	
 end
+
+#DRIVER CODE--------------------------------------------------------------------------------------------------------------
+add_chores(db, "Empty Dishwasher", "Wednesday")
+
+add_family(db,"Josh", 21)
+
+p db.execute("SELECT * FROM chores")
+p db.execute("SELECT * FROM family")
