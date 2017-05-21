@@ -3,7 +3,7 @@
 require 'sqlite3'
 #create SQL database
 db = SQLite3::Database.new("chores.db")
-db.results_as_hash = true
+# db.results_as_hash = true
 
 #create tables for Chores and for family members
 create_chores_table = <<-SQL
@@ -37,9 +37,11 @@ end
 #method to update to chores to assign chores to family members
 def assign_chores(db, fam_name, chore)
 	family = db.execute("SELECT * FROM family")
+	name_index = 0
+	#broken here, todo fix loop
 	family.each do |fam|
-		if fam["name"] == fam_name
-			name_index = fam
+		if fam[1].eql? fam_name 
+			name_index = fam[0]
 		end
 	end
 	db.execute("UPDATE chores SET family_id = ? WHERE name = ?", [name_index, chore])
@@ -54,11 +56,11 @@ def print_personal_list
 end
 
 #DRIVER CODE--------------------------------------------------------------------------------------------------------------
-# add_chores(db, "Empty Dishwasher", "Wednesday")
+add_chores(db, "Empty Dishwasher", "Wednesday")
+add_family(db, "Josh", 21)
+add_family(db,"Allie", 19)
+# p db.execute("SELECT * FROM chores")
+# p db.execute("SELECT * FROM family")
 
-# add_family(db,"Josh", 21)
-p db.execute("SELECT * FROM chores")
-p db.execute("SELECT * FROM family")
-
-assign_chores(db, "Josh", "Empty Dishwasher")
+assign_chores(db, "Allie", "Empty Dishwasher")
 p db.execute("SELECT * FROM chores")
