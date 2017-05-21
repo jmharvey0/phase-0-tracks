@@ -4,6 +4,7 @@ require 'sqlite3'
 #create SQL database
 db = SQLite3::Database.new("chores.db")
 db.results_as_hash = true
+
 #create tables for Chores and for family members
 create_chores_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS chores(
@@ -23,6 +24,8 @@ create_family_table = <<-SQL
 	);
 SQL
 
+db.execute(create_chores_table)
+db.execute(create_family_table)
 #method to add to chores table
 def add_chores
 	
