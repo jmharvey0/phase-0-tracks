@@ -1,0 +1,145 @@
+RELEASE 2
+1. Display the information in one table
+
+sqlite> SELECT * FROM friend_locations;
+1|Mariel|Pettee|TX|5
+2|Zena|Mengesha|WI|1
+3|James|Wood|GA|1
+4|Tyler|Richard|CO|2
+5|Leah|Reis-Dennis|OR|2
+6|Charley|Locke|CA|1
+7|Mercer|Cook|CA|4
+8|Jennifer|Friedmann|IL|4
+9|Sanjena|Sathian|GA|6
+
+2. Update an item that meets some condition (you can choose a condition that makes sense for you)
+
+UPDATE friend_locations SET home_state="TX" WHERE first="Tyler";
+sqlite> SELECT * FROM friend_locations;
+1|Mariel|Pettee|TX|5
+2|Zena|Mengesha|WI|1
+3|James|Wood|GA|1
+4|Tyler|Richard|TX|2
+5|Leah|Reis-Dennis|OR|2
+6|Charley|Locke|CA|1
+7|Mercer|Cook|CA|4
+8|Jennifer|Friedmann|IL|4
+9|Sanjena|Sathian|GA|6
+
+3. Display the information in both sides using one query.
+
+SELECT * FROM friend_locations, current_cities WHERE friend_locations.current_city_id=current_cities.id;
+1|Mariel|Pettee|TX|5|5|New Haven
+2|Zena|Mengesha|WI|1|1|New York
+3|James|Wood|GA|1|1|New York
+4|Tyler|Richard|TX|2|2|Boston
+5|Leah|Reis-Dennis|OR|2|2|Boston
+6|Charley|Locke|CA|1|1|New York
+7|Mercer|Cook|CA|4|4|San Francisco
+8|Jennifer|Friedmann|IL|4|4|San Francisco
+9|Sanjena|Sathian|GA|6|6|Mumbai
+
+4. Display a narrower selection of columns (fewer columns than all of them) from both tables using one query.
+
+SELECT friend_locations.first, friend_locations.last, current_cities.city FROM friend_locations JOIN current_cities ON friend_locations.current_city_id = current_cities.id;
+
+Mariel|Pettee|New Haven
+Zena|Mengesha|New York
+James|Wood|New York
+Tyler|Richard|Boston
+Leah|Reis-Dennis|Boston
+Charley|Locke|New York
+Mercer|Cook|San Francisco
+Jennifer|Friedmann|San Francisco
+Sanjena|Sathian|Mumbai
+
+5. Delete an item that meets some condition.
+DELETE FROM friend_locations WHERE friend_locations.first="Tyler";
+SELECT friend_locations.first, friend_locations.last, current_cities.city FROM friend_locations JOIN current_cities ON friend_locations.current_city_id = current_cities.id;
+
+Mariel|Pettee|New Haven
+Zena|Mengesha|New York
+James|Wood|New York
+Leah|Reis-Dennis|Boston
+Charley|Locke|New York
+Mercer|Cook|San Francisco
+Jennifer|Friedmann|San Francisco
+Sanjena|Sathian|Mumbai
+
+RELEASE 3
+Experimenting with different joins.
+
+SELECT first, last, home_state FROM friend_locations CROSS JOIN current_cities;
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Mariel|Pettee|TX
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+Zena|Mengesha|WI
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+James|Wood|GA
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Leah|Reis-Dennis|OR
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Charley|Locke|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Mercer|Cook|CA
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Jennifer|Friedmann|IL
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+Sanjena|Sathian|GA
+
+SELECT first, last, home_state FROM friend_locations NATURAL JOIN current_cities;
+Mariel|Pettee|TX
+Zena|Mengesha|WI
+James|Wood|GA
+Leah|Reis-Dennis|OR
+Charley|Locke|CA
+Mercer|Cook|CA
+Jennifer|Friedmann|IL
